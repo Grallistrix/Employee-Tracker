@@ -28,35 +28,18 @@ public class Main {
         Map<String, String> props = new HashMap<>();
         props.put("hibernate.show.sql","true");
         props.put("hibernate.hbm2ddl.auto","update");
-        //UWAGA object.remove(), USUŃ Z KONTEKSTU, A NIE BAZY
-        //Object XYZ - EntityManager.find(COTAKIEGO.class, PRIMARY_KEY) - znajdź obiekt w kontekście, operacje na nim są w kontekście!
-        //Transaction.commit() -> zapisz KONTEKST do w bazie! BEZ TEGO ZMIANY NIE ZACHODZĄ | TO CO POZA KONTEKSTEM INGORUJE
-
-        //EntityManager.Persist() -> DODAJ do kontekstu -> insert() na bazie -> pamiętaj o auto inkrementacji ID w SQL ustawić
-        //EntityManager.Merge() -> Dodaj do kontekstu TEGO CO W NIM NIE BYŁO (Odwrotnośc Detach'u)
-
-        //EntityManager.Detach() -> usuń z KONTEKSTU -> zmiany obiektu nie są zapisywane
-        //EntityManager.Remove() -> usuń Z BAZY -> Delete Object from Table
-
-        //EntityManager.Find() -> ZWRÓĆ z dostanego kontekstu obiekt, zmiany na nim są zmianami w bazie
-        //EntityManager.Refresh(Object) -> przywróć stan z kontekstu -> powrót do tego co w bazie
-
+        
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
         EntityManager em = emf.createEntityManager();
-   
-
         System.out.println("\tCREATED EMF - EM\n\tROZPOCZYNAM transakcję");
         try{
            
-    
             controll(em);
-
            
         }catch(Exception e){e.printStackTrace();}
         finally{
             System.out.println("\n\n\tCLOSING THIS STUFF\n");
             em.close();
-            
         }
     }
 
@@ -96,7 +79,6 @@ public class Main {
              userInput = scanner.nextLine();
     }
     scanner.close();
-
 
     }
     public static void module_Groups(EntityManager em) throws IOException{
