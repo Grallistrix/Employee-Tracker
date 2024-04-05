@@ -47,7 +47,7 @@ This is a Java-based Employee Tracker application that utilizes Hibernate for OR
 
 ## Usage
 
-Once the application is running, you can access the Employee Tracker through your web browser by navigating to `http://localhost:8080` (assuming the default port).
+After running the application, you can interact with the Employee Tracker through the console. Use the provided command-line interface to perform various operations such as adding, updating, or deleting employee records. This is only temporarary as there is a JFX version of interface in the works
 
 ## Contributing
 
