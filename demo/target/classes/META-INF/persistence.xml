@@ -11,8 +11,8 @@
             <!-- database connection -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost/demo" />
-            <property name="jakarta.persistence.jdbc.user" value="root" />
-            <property name="jakarta.persistence.jdbc.password" value="RoowPasswd" />
+            <property name="jakarta.persistence.jdbc.user" value="YOUR_USERNAME" />
+            <property name="jakarta.persistence.jdbc.password" value="YOUR_PASSWD" />
         </properties>
     </persistence-unit>
 </persistence>
